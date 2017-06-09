@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row" style="margin:10px;">
+        <div class="col-sm-12">
+            <h5 class="heading-style">Awesome Listings Widget</h5>
+        </div>
+    </div>
+    <div class="row" style="margin:10px;">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4"> <button id="price" class="btn-primary btn-md" [ngClass]="isEnabled('price')?'btn-enabled':'btn'" (click)="clicked($event)">Price</button></div>
+                <div class="col-sm-4"><button id="beds" class=" btn-primary btn-md" [ngClass]="isEnabled('beds')?'btn-enabled':'btn'" (click)="clicked($event)">Beds</button></div>
+                <div class="col-sm-4"><button id="sqft" class="btn-primary btn-md" [ngClass]="isEnabled('sqft')?'btn-enabled':'btn'" (click)="clicked($event)">Sq.Ft.</button></div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let data of response; let i=index">
+        <div class="row" *ngIf="draw(i)" style="margin:10px;">
+            <div class="col-sm-6">
+                <div class="thumb">
+                    <div class="aside">
+                        <img class="img-thumbnail" [src]="data.img" />
+                        <p *ngIf="data.built" class="year"><sup>Built in {{data.built}}</sup></p>
+                        <div class="bs-grid-big">
+                            <p *ngIf="data.address" class="thumb-address"><a href="{{data.url}}">{{data.address}}</a></p>
+                            <p *ngIf="data.price" class="thumb-cost input-lg">${{data.price}}</p>
+                            <ul class="thumb-bullets">
+                                <li *ngIf="data.beds">{{data.beds}} <span>Beds</span></li>
+                                <li *ngIf="data.baths">{{data.baths}}<span>Baths</span></li>
+                                <li *ngIf="data.sqft">{{data.sqft}}<span>sq ft</span></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6" *ngIf="response[i+1]">
+                <div class="thumb">
+                    <div class="aside">
+                        <img class="img-thumbnail" [src]="response[i+1].img" />
+                        <p *ngIf="response[i+1].built" class="year"><sup>Built in {{response[i+1].built}}</sup></p>
+                        <div class="bs-grid-big">
+
+                            <p *ngIf="response[i+1].address" class="thumb-address"> <a href="{{response[i+1].url}}">{{response[i+1].address}}</a></p>
+                            <p *ngIf="response[i+1].price" class="thumb-cost input-lg">${{data.price}}</p>
+
+                            <ul class="thumb-bullets">
+                                <li *ngIf="response[i+1].beds">{{response[i+1].beds}} <span>Beds</span></li>
+                                <li *ngIf="response[i+1].baths">{{response[i+1].baths}}<span>Baths</span></li>
+                                <li *ngIf="response[i+1].sqft">{{response[i+1].sqft}}<span>sq ft</span></li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+.btn {
+    background-color: #64df00;
+    border-color: #64df00;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.btn-enabled {
+    background-color: #0068e7;
+    border-color: #0068e7;
+}
+
+.heading-style {
+    margin-top: 20px;
+}
+
+.thumb {
+    border: 2px solid #CCCCCC;
+    width: 100%;
+    height: 100%;
+}
+
+.aside {
+    height: 100%;
+    padding: 0.5em;
+    position: relative;
+}
+
+.thumb img {
+    float: left;
+    overflow: hidden;
+    width: auto;
+    height: 200px;
+    /* These two are added only for clarity, */
+}
+
+.bs-grid-big {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.well {
+    margin-left: 10px;
+    margin-right: 5px;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto !important;
+    /* These two are added only for clarity, */
+    height: 100%;
+}
+
+p.thumb-address {
+    font-size: 20px;
+    height: 20%;
+}
+
+ul.thumb-bullets {
+    margin-left: -40px;
+    height: 10%;
+}
+
+ul.thumb-bullets li {
+    display: inline;
+    list-style-type: circle;
+    padding-right: 20px;
+}
+
+p.thumb-cost {
+    font-size: 45px;
+}
+
+.row:after {
+    clear: left;
+}
+
+.thumb-cost {
+    font-size: 50%;
+    display: block;
+}
+
+.caption {
+    height: 100%;
+    padding: 0.5em;
+}
+
+.year {
+    float: right;
+}
